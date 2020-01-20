@@ -1,4 +1,23 @@
 # Usage
+
+
+## Example
+
+These are terraform examples covering some of the basic usages of this sub-module.
+
+### VPC Flow-logs to S3
+````
+module "vpc_flowlogs" {
+  source = "../../flow-logs"
+
+  vpc_id = "vpc-vpc_id"
+
+  log_destination = "bucket_arn"
+  log_destination_type = "s3"
+
+}
+````
+
 <!--- BEGIN_TF_DOCS --->
 ## Providers
 
