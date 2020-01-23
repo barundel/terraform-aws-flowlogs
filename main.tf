@@ -10,7 +10,7 @@ locals {
 # VPC FlowLogs
 ########## ##########
 resource "aws_flow_log" "vpc_flow_log" {
-  count = "${length(var.vpc_id) > 0 ? 1 : 0}"
+  count = length(var.vpc_id) > 0 ? 1 : 0
 
   vpc_id = var.vpc_id
 
@@ -28,7 +28,7 @@ resource "aws_flow_log" "vpc_flow_log" {
 # Basic IAM Role
 ########## ##########
 resource "aws_iam_role" "flow_logs_role" {
-  count = "${var.create_role ? 1 : 0  }"
+  count = var.create_role ? 1 : 0
 
   name = "${local.name}-FlowLogs-Role"
 
@@ -36,7 +36,7 @@ resource "aws_iam_role" "flow_logs_role" {
 }
 
 resource "aws_iam_role_policy" "flow_logs" {
-  count = "${var.create_role ? 1 : 0  }"
+  count = var.create_role ? 1 : 0
 
   name = "${local.name}-FlowLogs-Policy"
   role =  aws_iam_role.flow_logs_role.*.id[0]

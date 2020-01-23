@@ -9,6 +9,14 @@ on:
       - master
 
 jobs:
+  tests:
+    name: run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: run
+        uses: cedrickring/golang-action@1.4.1
+
   docs:
     runs-on: ubuntu-latest
     steps:
@@ -24,6 +32,7 @@ jobs:
           tf_docs_output_method: inject
           tf_docs_git_push: 'true'
           tf_docs_git_commit_message: 'terraform-docs: automated action'
+
   build:
     runs-on: ubuntu-latest
     steps:
