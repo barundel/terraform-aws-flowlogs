@@ -32,9 +32,9 @@ resource "aws_flow_log" "vpc_flow_log" {
 # Subnet FlowLogs
 ########## ##########
 resource "aws_flow_log" "subnet_flow_log" {
-  count = length(var.subnet_id) > 0 ? length(var.subnet_id) : 0
+  count = length(var.subnet_ids) > 0 ? length(var.subnet_ids) : 0
 
-  subnet_id = var.subnet_id[count.index]
+  subnet_id = var.subnet_ids[count.index]
 
   iam_role_arn = local.iam_role_arn[0]
 
@@ -50,9 +50,9 @@ resource "aws_flow_log" "subnet_flow_log" {
 # ENI FlowLogs
 ########## ##########
 resource "aws_flow_log" "eni_flow_log" {
-  count = length(var.eni_id) > 0 ? length(var.eni_id) : 0
+  count = length(var.eni_ids) > 0 ? length(var.eni_ids) : 0
 
-  eni_id = var.eni_id[count.index]
+  eni_id = var.eni_ids[count.index]
 
   iam_role_arn = local.iam_role_arn[0]
 
