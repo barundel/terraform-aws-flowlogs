@@ -59,7 +59,7 @@ For more information on the available log format fields see the [documentation](
 module "subnet_flowlogs" {
   source = "../../flow-logs"
 
-  subnet_id = ["subnet-025hiho10", "subnet-062dhiho6313eb", "subnet-09d6hiho0df5ac9"]
+  subnet_ids = ["subnet-025hiho10", "subnet-062dhiho6313eb", "subnet-09d6hiho0df5ac9"]
 
   log_destination = "bucket_arn"
   log_destination_type = "s3"
@@ -73,7 +73,7 @@ module "subnet_flowlogs" {
 module "eni_flowlogs" {
   source = "../../tf-modules/terraform-aws-flowlogs"
 
-  eni_id = ["eni-0503okdbe0af", "eni-052gi89a2d"]
+  eni_ids = ["eni-0503okdbe0af", "eni-052gi89a2d"]
 
   log_destination = "bucket_arn"
   log_destination_type = "s3"
