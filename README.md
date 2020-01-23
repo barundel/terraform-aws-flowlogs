@@ -1,4 +1,4 @@
-# terraform-aws-flowlogs [![Build Status](https://github.com/barundel/terraform-aws-flowlogs/workflows/Release+a+Version/badge.svg)](https://github.com/barundel/terraform-aws-flowlogs/actions)
+# terraform-aws-flowlogs [![Build Status](https://github.com/barundel/terraform-aws-flowlogs/workflows/build/badge.svg)](https://github.com/barundel/terraform-aws-flowlogs/actions)
 
 > **A Terraform module for creating FlowLogs resources.**
 

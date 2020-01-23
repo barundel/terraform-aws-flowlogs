@@ -4,7 +4,7 @@ Thank you for your interest in this project!
 
 We use *GitHub Issues* for trackings issues and features. You can make a contribution by:
 
-1. Reporting an issue or making a feature request [here](https://github.com/barundel/terraform-aws-logging/issues).
+1. Reporting an issue or making a feature request [here](https://github.com/barundel/terraform-aws-flowlogs/issues).
 2. Contributing code to this project by fixing an issue or adding a new feature (see below).
 
 Before contributing a new feature, please discuss its suitability with the project maintainers in an issue first. Thanks!
@@ -21,7 +21,7 @@ Before contributing a new feature, please discuss its suitability with the proje
 
 Pull requests have to meet the following requirements:
 
-2. **Documentation**: Pull requests need to update the [documentation](https://github.com/barundel/terraform-aws-logging/tree/master/README.md) together with the code change.
+2. **Documentation**: Pull requests need to update the [documentation](https://github.com/barundel/terraform-aws-flowlogs/tree/master/README.md) together with the code change.
 
 3. **Commits**: Commits should be as small as possible while ensuring that each commit compiles and passes tests independently. [Write good commit messages](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html). If needed, [squash your commits](https://davidwalsh.name/squash-commits-git) prior to submission.
 
