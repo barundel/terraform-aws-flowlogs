@@ -59,7 +59,7 @@ For more information on the available log format fields see the [documentation](
 module "subnet_flowlogs" {
   source = "../../flow-logs"
 
-  subnet_id = ["subnet-025hiho10", "subnet-062dhiho6313eb", "subnet-09d6hiho0df5ac9"]
+  subnet_ids = ["subnet-025hiho10", "subnet-062dhiho6313eb", "subnet-09d6hiho0df5ac9"]
 
   log_destination = "bucket_arn"
   log_destination_type = "s3"
@@ -73,7 +73,7 @@ module "subnet_flowlogs" {
 module "eni_flowlogs" {
   source = "../../tf-modules/terraform-aws-flowlogs"
 
-  eni_id = ["eni-0503okdbe0af", "eni-052gi89a2d"]
+  eni_ids = ["eni-0503okdbe0af", "eni-052gi89a2d"]
 
   log_destination = "bucket_arn"
   log_destination_type = "s3"
@@ -96,12 +96,12 @@ module "eni_flowlogs" {
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:-----:|
 | create\_role | Creates a basic IAM role for flowlogs to do its job | `bool` | `true` | no |
-| eni\_id | Elastic Network Interface ID to attach flow logs to. | `list` | `[]` | no |
+| eni\_ids | Elastic Network Interface ID to attach flow logs to. | `list(string)` | `[]` | no |
 | iam\_role\_arn | The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group | `string` | `""` | no |
 | log\_destination | The ARN of the logging destination. | `string` | `""` | no |
 | log\_destination\_type | The type of the logging destination. Valid values: cloud-watch-logs, s3. Default: cloud-watch-logs. | `string` | `"cloud-watch-logs"` | no |
 | log\_format | The fields to include in the flow log record, in the order in which they should appear. | `string` | `""` | no |
-| subnet\_id | Subnet ID to attach the flow logs to. | `list` | `[]` | no |
+| subnet\_ids | Subnet ID to attach the flow logs to. | `list(string)` | `[]` | no |
 | traffic\_type | The type of traffic to capture. Valid values: ACCEPT,REJECT, ALL, Defaults to ALL. | `string` | `"ALL"` | no |
 | vpc\_id | VPC ID to attach flow logs to. | `string` | `""` | no |
 

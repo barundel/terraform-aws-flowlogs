@@ -2,7 +2,6 @@
 # Locals
 ########## ##########
 locals {
-  //iam_role_arn = coalesce([aws_iam_role.flow_logs_role.*.arn[0]], var.iam_role_arn)
   iam_role_arn = coalescelist(aws_iam_role.flow_logs_role.*.arn, [var.iam_role_arn])
   name = random_pet.name.id
 }
@@ -35,7 +34,7 @@ resource "aws_flow_log" "vpc_flow_log" {
 resource "aws_flow_log" "subnet_flow_log" {
   count = length(var.subnet_id) > 0 ? length(var.subnet_id) : 0
 
-  subnet_id = element(var.subnet_id, count.index)
+  subnet_id = var.subnet_id[count.index]
 
   iam_role_arn = local.iam_role_arn[0]
 
@@ -53,7 +52,7 @@ resource "aws_flow_log" "subnet_flow_log" {
 resource "aws_flow_log" "eni_flow_log" {
   count = length(var.eni_id) > 0 ? length(var.eni_id) : 0
 
-  eni_id = element(var.eni_id, count.index)
+  eni_id = var.eni_id[count.index]
 
   iam_role_arn = local.iam_role_arn[0]
 
