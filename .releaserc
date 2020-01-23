@@ -1,5 +1,5 @@
 {
-  'repositoryUrl': 'https://github.com/barundel/terraform-aws-apigateway',
+  'repositoryUrl': 'https://github.com/barundel/terraform-aws-flowlogs',
   'tagFormat': 'v${version}',
   'branch': 'master',
   'plugins': [
