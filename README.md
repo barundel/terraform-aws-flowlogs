@@ -1,4 +1,4 @@
-# terraform-aws-flowlogs [![Build Status](https://github.com/barundel/terraform-aws-flowlogs/workflows/build/badge.svg)](https://github.com/barundel/terraform-aws-flowlogs/actions)
+# terraform-aws-flowlogs [![Build Status](https://github.com/barundel/terraform-aws-flowlogs/workflows/Release+a+Version/badge.svg)](https://github.com/barundel/terraform-aws-flowlogs/actions)
 
 > **A Terraform module for creating FlowLogs resources.**
 
@@ -36,7 +36,7 @@ module "vpc_flowlogs" {
 
 ````
 module "vpc_flowlogs" {
-  source = "../../tf-modules/terraform-aws-logging/flow-logs"
+  source = "../../flow-logs"
 
   vpc_id = "vpc-vpc_id"
 
@@ -48,9 +48,40 @@ module "vpc_flowlogs" {
 }
 ````
 
+> Note that in terraform you need the double $$ format and you can only use some of the fields with s3 as the destination.
+
 For more information on the available log format fields see the [documentation](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html) 
 
-> Note that in terraform you need the double $$ format. 
+
+### Subnet level Flow-logs
+
+````
+module "subnet_flowlogs" {
+  source = "../../flow-logs"
+
+  subnet_id = ["subnet-025hiho10", "subnet-062dhiho6313eb", "subnet-09d6hiho0df5ac9"]
+
+  log_destination = "bucket_arn"
+  log_destination_type = "s3"
+
+}
+````
+
+### ENI level Flow-logs
+
+````
+module "eni_flowlogs" {
+  source = "../../tf-modules/terraform-aws-flowlogs"
+
+  eni_id = ["eni-0503okdbe0af", "eni-052gi89a2d"]
+
+  log_destination = "bucket_arn"
+  log_destination_type = "s3"
+
+}
+````
+
+
 
 <!--- BEGIN_TF_DOCS --->
 ## Providers

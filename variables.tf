@@ -19,12 +19,12 @@ variable "log_destination_type" {
 }
 
 variable "eni_id" {
-  default = ""
+  default = []
   description = "Elastic Network Interface ID to attach flow logs to."
 }
 
 variable "subnet_id" {
-  default = ""
+  default = []
   description = "Subnet ID to attach the flow logs to."
 }
 
