@@ -25,6 +25,7 @@ variable "eni_id" {
 
 variable "subnet_id" {
   default = []
+  type = list(string)
   description = "Subnet ID to attach the flow logs to."
 }
 
