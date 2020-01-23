@@ -20,6 +20,7 @@ variable "log_destination_type" {
 
 variable "eni_id" {
   default = []
+  type = list(string)
   description = "Elastic Network Interface ID to attach flow logs to."
 }
 
