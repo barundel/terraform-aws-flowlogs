@@ -18,13 +18,13 @@ variable "log_destination_type" {
   description = "The type of the logging destination. Valid values: cloud-watch-logs, s3. Default: cloud-watch-logs."
 }
 
-variable "eni_id" {
+variable "eni_ids" {
   default = []
   type = list(string)
   description = "Elastic Network Interface ID to attach flow logs to."
 }
 
-variable "subnet_id" {
+variable "subnet_ids" {
   default = []
   type = list(string)
   description = "Subnet ID to attach the flow logs to."
