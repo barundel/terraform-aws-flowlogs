@@ -2,6 +2,10 @@
 
 > **A Terraform module for creating FlowLogs resources.**
 
+This module can be used to create flowlogs against a vpc, subnet's and eni's, it also creates an IAM role for each flowlog if you do not pass in a specific role. 
+
+> ## Currently only supports s3 as destination type.
+
 ## Table of Contents
 
 - [Maintenance](#maintenance)
@@ -19,7 +23,7 @@ These are terraform examples covering some of the basic usages of this sub-modul
 
 ### Simple VPC Flow-logs to S3
 
-The folowing example creates a VPC flow log to s3. 
+The folowing example creates a VPC flow log to s3.
 ````
 module "vpc_flowlogs" {
   source = "../../flow-logs"
@@ -31,6 +35,8 @@ module "vpc_flowlogs" {
 
 }
 ````
+
+> Note that for the VPC it is one per VPC but with the subnet and eni you can pass in a list. 
 
 ### VPC Flow-logs to s3 with log-format
 
@@ -50,7 +56,7 @@ module "vpc_flowlogs" {
 
 > Note that in terraform you need the double $$ format and you can only use some of the fields with s3 as the destination.
 
-For more information on the available log format fields see the [documentation](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html) 
+For more information on the available log format fields see the [documentation](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html).
 
 
 ### Subnet level Flow-logs

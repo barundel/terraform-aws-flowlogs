@@ -9,6 +9,10 @@ import (
 	"strings"
 )
 
+var s3BucketName = "flowlogs-data-pricing-686794321847"
+var s3Key = "AWSLogs/686794321847/vpcflowlogs/eu-west-1/2019/12/18/686794321847_vpcflowlogs_eu-west-1_fl-0f7c58d2ddbcf20d7_20191218T0000Z_3b25f0ed.log.gz"
+var awsProfile = "cdl008"
+
 func main() {
 	//mySess := session.Must(session.NewSessionWithOptions(session.Options{
 	//    Config:  aws.Config{Region: aws.String("eu-west-1"),},
@@ -16,6 +20,8 @@ func main() {
 	//}))
 
 	//Use this if not wanting to specifty a profile ...
+	mySess := session2.CreateSessionFromProfile(awsProfile, awsRegion)
+
 	mySess, err := session.NewSession(&aws.Config{Region: aws.String("eu-west-1")})
 	if err != nil {
 		fmt.Printf("Error getting a session: %o", err)
@@ -23,11 +29,9 @@ func main() {
 
 	s3Svc := s3.New(mySess)
 
-	s3BucketName := "flowlogs-data-pricing-686794321847"
-
 	selectInput := s3.SelectObjectContentInput{
 		Bucket:         aws.String(s3BucketName),
-		Key:            aws.String("AWSLogs/686794321847/vpcflowlogs/eu-west-1/2019/12/18/686794321847_vpcflowlogs_eu-west-1_fl-0f7c58d2ddbcf20d7_20191218T0000Z_3b25f0ed.log.gz"),
+		Key:            aws.String(s3_key),
 		Expression:     aws.String("select * from s3object s limit 50"),
 		ExpressionType: aws.String("SQL"),
 		InputSerialization: &s3.InputSerialization{
