@@ -35,7 +35,7 @@ resource "aws_flow_log" "vpc_flow_log" {
 resource "aws_flow_log" "subnet_flow_log" {
   count = length(var.subnet_id) > 0 ? length(var.subnet_id) : 0
 
-  subnet_id = element(var.subnet_id, count.index)
+  subnet_id = sort(var.subnet_id)[count.index]
 
   iam_role_arn = local.iam_role_arn[0]
 
