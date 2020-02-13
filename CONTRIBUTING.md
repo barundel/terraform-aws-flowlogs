@@ -11,7 +11,7 @@ Before contributing a new feature, please discuss its suitability with the proje
 
 ## Contribution Process
 
-1. Fork and *git clone* [the-reop](https://github.com/barundel/terraform-aws-logging).
+1. Fork and *git clone* [the-reop](https://github.com/barundel/terraform-aws-flowlogs).
 2. Create a new *git branch* from the master branch where you develop your changes.
 3. Create a [Pull Request](https://help.github.com/articles/about-pull-requests/) for your contribution by following the instructions in the pull request template.
 4. Perform a code review with the project maintainers on the pull request. We may suggest changes, improvements or alternatives.

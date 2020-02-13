@@ -5,7 +5,7 @@ Put an `x` into the box that applies:
 - [ ] This issue describes a bug.
 - [ ] This issue describes a feature request.
 
-For more information, see the [Contributing Guidelines](https://github.com/barundel/terraform-aws-logging/tree/master/CONTRIBUTING.md).
+For more information, see the [Contributing Guidelines](https://github.com/barundel/terraform-aws-flowlogs/tree/master/CONTRIBUTING.md).
 
 ### Description
 
