@@ -7,11 +7,11 @@ Put an `x` into the box(es) that apply:
 - [ ] This pull request enhances existing functionality.
 - [ ] This pull request introduces breaking change.
 
-For more information, see the [Contributing Guidelines](https://github.com/barundel/terraform-aws-logging/tree/master/CONTRIBUTING.md).
+For more information, see the [Contributing Guidelines](https://github.com/barundel/terraform-aws-flowlogs/tree/master/CONTRIBUTING.md).
 
 ### Description
 
-Describe what this pull request achieves. Ensure you have read the [Contributing Guidelines](https://github.com/barundel/terraform-aws-logging/tree/master/CONTRIBUTING.md) document before submitting.
+Describe what this pull request achieves. Ensure you have read the [Contributing Guidelines](https://github.com/barundel/terraform-aws-flowlogs/tree/master/CONTRIBUTING.md) document before submitting.
 
 ### Issues Resolved
 

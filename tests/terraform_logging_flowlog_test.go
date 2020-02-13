@@ -77,3 +77,9 @@ func TestTerraformVPCFlowLogs(t *testing.T) {
 	// At the end of the test, run `terraform d estroy` to clean up any resources that were created
 	defer terraform.Destroy(t, terraformOptions)
 }
+
+
+
+index: 0, value: ,"dstport":"1754","end":"1580256042","instance-id":"-","interface-id":"eni-06f3e8cdc7242c038","log-status":"OK","packets":"2","pkt-dstaddr":"10.100.56.23","pkt-srcaddr":"10.100.56.37","protocol":"6","srcaddr":"10.100.56.37","srcport":"1521","start":"1580255984","subnet-id":"subnet-69060d32","tcp-flags":"19","type":"IPv4","version":"3","vpc-id":"vpc-f540fe93"}
+Error unmarshalling Flow Log Record: invalid character ',' looking for beginning of value
+thisflowlogrecord: {              }
