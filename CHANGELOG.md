@@ -1,5 +1,13 @@
 All notable changes to this terraform will be documented in this file.
 
+## [1.0.3](https://github.com/barundel/terraform-aws-flowlogs/compare/v1.0.2...v1.0.3) (2020-02-13)
+
+
+### Bug Fixes
+
+* clean up for reg push ([1877b9b](https://github.com/barundel/terraform-aws-flowlogs/commit/1877b9b410e9b2e49dfd4095e82dbe062d4470f1))
+* cleaning up the readme ([cf40c7b](https://github.com/barundel/terraform-aws-flowlogs/commit/cf40c7b51c23a1360df1b817ee0f97e354ceff05))
+
 ## [1.0.2](https://github.com/barundel/terraform-aws-flowlogs/compare/v1.0.1...v1.0.2) (2020-01-23)
 
 
